@@ -1,9 +1,10 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 import config as cfg
 
 
-def analyze_fdm_data(filepath: str = None) -> None:
+def analyze_fdm_data(filepath: str = None, save_dir: str | None = None) -> None:
     if filepath is None:
         filepath = cfg.GROUND_TRUTH_PATH
     print(f"--- EDA for {filepath} ---")
@@ -24,6 +25,7 @@ def analyze_fdm_data(filepath: str = None) -> None:
 
     # 2) Spatial distribution (center slice + histogram)
     print("\n--- Spatial Distribution ---")
+    os.makedirs(save_dir, exist_ok=True) if save_dir else None
     plt.figure(figsize=(12, 5))
     plt.subplot(1, 2, 1)
     plt.hist(T.flatten(), bins=50, color="orangered")
@@ -39,7 +41,13 @@ def analyze_fdm_data(filepath: str = None) -> None:
     plt.xlabel("X index")
     plt.ylabel("Y index")
     plt.tight_layout()
-    plt.show()
+    if save_dir:
+        out_path = os.path.join(save_dir, "spatial_distribution.png")
+        plt.savefig(out_path, dpi=150)
+        print(f"Saved: {out_path}")
+        plt.close()
+    else:
+        plt.show()
 
     # 3) Gradient analysis
     print("\n--- Gradient Analysis ---")
@@ -62,10 +70,16 @@ def analyze_fdm_data(filepath: str = None) -> None:
     plt.xlabel("X index")
     plt.ylabel("Y index")
     plt.tight_layout()
-    plt.show()
+    if save_dir:
+        out_path = os.path.join(save_dir, "gradient_analysis.png")
+        plt.savefig(out_path, dpi=150)
+        print(f"Saved: {out_path}")
+        plt.close()
+    else:
+        plt.show()
 
 
 if __name__ == "__main__":
-    analyze_fdm_data(cfg.GROUND_TRUTH_PATH)
+    analyze_fdm_data(cfg.GROUND_TRUTH_PATH, save_dir=os.path.join("outputs", "eda"))
 
 
