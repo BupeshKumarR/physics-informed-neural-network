@@ -1,3 +1,22 @@
-numpy>=1.24
-matplotlib>=3.7
-torch>=2.2
+# Physics-Informed Neural Networks for Heat Sink Analysis
+# Python 3.8+ required
+
+# Core Dependencies
+numpy>=1.21.0          # Numerical operations
+matplotlib>=3.4.0      # Visualization
+scipy>=1.7.0           # Scientific computing
+
+# Deep Learning
+torch>=2.0.0           # PyTorch for neural network training
+torchvision>=0.15.0    # Additional torch utilities
+
+# Mesh Processing
+meshio>=5.3.0          # Gmsh mesh I/O (.msh files)
+trimesh>=3.10.0        # Mesh operations and boundary sampling
+
+# Ground Truth Solver (Optional)
+# Install via: conda install -c conda-forge fenics
+fenics>=2019.1.0       # Ground truth solver (optional)
+
+# Additional Tools
+scikit-learn>=1.0.0    # For analysis utilities (optional)

@@ -7,6 +7,7 @@ __pycache__/
 .venv/
 venv/
 env/
+hpc_backup/envs/
 
 # OS files
 .DS_Store
@@ -16,13 +17,39 @@ env/
 dist/
 build/
 
-# Data/outputs
+# Project-specific
 *.npy
 *.npz
 *.pt
 *.pth
+*.msh
+hpc_backup/
 
 # IDE
 .idea/
 .vscode/
+*.swp
+*.swo
 
+# Logs and temporary files
+logs/
+*.log
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# Keep only final presentations in plots
+plots/
+!plots/final_presentations/
+!plots/final_presentations/*.png
+!plots/final_presentations/*.md
+
+# Exclude other plot folders
+outputs/
+results/
+models/
+saved_models/
+
+# SLURM scripts (keep root level only)
+debug_boundary*.slurm
