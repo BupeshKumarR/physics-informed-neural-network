@@ -1,7 +1,7 @@
-# Physics-Informed Neural Networks for Heat Transfer Analysis
+# Physics-Informed Neural Networks for Heat Conduction
 
 **Authors:** Bupesh Kumar, Mahadharsan Ravichandran  
-**Course:** DS5500 - Deep Learning, Fall 2025  
+**Course:** DS5500 - Data Science Capstone, Fall 2025  
 **Institution:** Northeastern University
 
 ---
@@ -15,11 +15,10 @@ This project develops **Physics-Informed Neural Networks (PINNs)** to solve heat
 
 **Key Results:**
 - 15,000× faster than traditional FEM solvers
-- 18.8°C MAE on complex heat sink geometry (25-100°C range)
+- 19.9°C MAE on complex heat sink geometry (25-100°C range)
 - SIREN architecture outperforms standard Tanh baseline by 8.9%
 - Physics-constrained learning without labeled training data
 
-**[Final Report PDF](report.pdf)** *(link to your report when available)*
 
 ---
 
@@ -77,7 +76,7 @@ physics-informed-neural-network/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/physics-informed-neural-network.git
+https://github.com/BupeshKumarR/physics-informed-neural-network.git
 cd physics-informed-neural-network
 
 # 2. Create conda environment
@@ -178,7 +177,7 @@ sbatch phase2_heatsink.slurm
 - Trained model: `models/heatsink_pinn_model.pth`
 - Results: `results/phase2_results.npz` (MAE, MSE, loss curves)
 - Training time: ~1 hour on NVIDIA V100 GPU
-- Final MAE: ~18.8°C
+- Final MAE: ~19.9°C
 
 #### Step 4: Generate Visualizations
 
@@ -305,8 +304,8 @@ k∇²T = 0
 ### Phase 2: Heat Sink
 - **Mean Absolute Error (MAE)**: 18.8°C
 - **Temperature Range**: 25°C to 100°C (75°C span)
-- **Relative Error**: ~25% (18.8/75)
-- **SIREN vs Tanh**: 8.9% improvement (18.8°C vs 20.7°C MAE)
+- **Relative Error**: ~25% (19.9/75)
+- **SIREN vs Tanh**: 8.9% improvement (19.9°C vs 20.7°C MAE)
 - **Training Time**: ~1 hour
 - **Inference Speed**: < 1 second for full 50K-point mesh
 - **Speedup vs FEM**: 15,000× faster
@@ -393,10 +392,10 @@ Sample outputs available in `plots/final_presentations/`:
 Pre-trained Phase 2 model available:
 - **File**: `models/heatsink_pinn_model.pth`
 - **Architecture**: SIREN (8 layers × 256 neurons)
-- **Performance**: 18.8°C MAE
+- **Performance**: 19.9°C MAE
 - **Usage**: Load with `torch.load()` and use `HeatSinkPINN` class
 
 ---
 
-**Last Updated:** October 2025  
+**Last Updated:** November 2025  
 **Project Status:** Complete (DS5500 Fall 2025)
