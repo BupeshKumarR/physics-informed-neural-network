@@ -11,7 +11,7 @@
 This project develops **Physics-Informed Neural Networks (PINNs)** to solve heat transfer problems in 3D geometries, achieving significant speedups over traditional finite element methods while maintaining reasonable accuracy. The work consists of two phases:
 
 - **Phase 1**: Transient heat equation in a 3D cube with internal heat source (23.6% relative error)
-- **Phase 2**: Steady-state heat equation on a complex 3D heat sink geometry (18.8°C MAE)
+- **Phase 2**: Steady-state heat equation on a complex 3D heat sink geometry (19.9°C MAE)
 
 **Key Results:**
 - 15,000× faster than traditional FEM solvers
